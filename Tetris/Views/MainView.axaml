@@ -1,0 +1,138 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Tetris.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="630"
+             x:Class="Tetris.Views.MainView"
+             x:DataType="vm:MainViewModel">
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainViewModel />
+    </Design.DataContext>
+
+
+    <UserControl.Styles>
+        <Style Selector="Button">
+            <Setter Property="CornerRadius" Value="6.5" />
+            <Setter Property="FontFamily" Value="Times New Roman" />
+            <Setter Property="Background" Value="#FFFF6496" />
+            <Setter Property="Padding" Value="1" />
+            <Setter Property="FontSize" Value="22" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="BorderBrush" Value="White" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+    </UserControl.Styles>
+
+    <Grid Background="#FFFFA0C8" ColumnDefinitions="70*,17*,Auto,87*" RowDefinitions="*">
+
+        <Viewbox Grid.Column="2">
+            <ItemsControl ItemsSource="{Binding GameCanvasImages}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Canvas Width="{Binding CanvasWidth, Mode=OneWay}" Height="{Binding CanvasHeight, Mode=OneWay}"
+                                ClipToBounds="True" Background="{Binding BackgroundColor}" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding ImageSource}" Width="{Binding Width}" Height="{Binding Height}">
+                            <Image.RenderTransform>
+                                <TranslateTransform X="{Binding LeftPosition}" Y="{Binding TopPosition}" />
+                            </Image.RenderTransform>
+                        </Image>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Viewbox>
+
+
+        <StackPanel Grid.Column="0"
+                    Grid.Row="0"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Center" Height="550" Margin="0,10,0,0" Width="166" Grid.ColumnSpan="2">
+            <TextBlock
+                Text="Tetris" FontSize="38" FontWeight="Bold" FontFamily="Times New Roman" Foreground="Gold"
+                Height="40" Margin="0,20,0,0" TextAlignment="Center" />
+            <Image
+                Width="125" Height="125"
+                Source="../Assets/tetris.png" MinWidth="100" MinHeight="100" Margin="0,100,0,0" />
+            <Button
+                Content="Save"
+                Margin="0,50,0,0"
+                Height="38" Width="134"
+                IsVisible="{Binding SaveVisibility}"
+                Command="{Binding SaveGameCommand}" />
+            <Button
+                Content="Load"
+                Height="38" Width="134"
+                Margin="0,30,0,0"
+                IsVisible="{Binding GameStartingVisibility}"
+                Command="{Binding LoadGameCommand}" />
+            <Button
+                Content="Pink Mode&lt;3"
+                Height="38" Width="134"
+                Margin="0,63,0,0"
+                IsVisible="{Binding PausedVisibility}"
+                Command="{Binding PinkCommand}" />
+        </StackPanel>
+
+        <StackPanel Grid.Column="3"
+                    Grid.Row="0"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Center" Height="550" Margin="0,10,0,0" Width="165">
+            <TextBlock
+                Text="{Binding Score, Mode=OneWay}"
+                FontWeight="Bold" FontSize="22" TextAlignment="Center" Height="34" Margin="0,20,0,0" Width="175" />
+            <TextBlock
+                TextWrapping="Wrap"
+                Text="{Binding TimeText, Mode=OneWay}"
+                FontWeight="Bold" FontSize="20" TextAlignment="Center" Height="73" Margin="0,27,0,28"
+                IsVisible="True" />
+            <TextBlock
+                Text="Next" TextAlignment="Center" FontSize="20" FontWeight="Bold" Margin="0,5,0,0"
+                IsVisible="{Binding PausedVisibility}" />
+            <Image
+                Margin="20"
+                Width="100" Height="100"
+                Source="{Binding NextBlockImage, Mode=OneWay}" />
+            <Button
+                Content="{Binding PausedText}"
+                Height="38" Width="134"
+                Margin="0,10,0,0"
+                IsVisible="{Binding PausedVisibility}"
+                Command="{Binding PauseCommand}" />
+            <Button
+                Content="New Game"
+                Height="38" Width="134"
+                Margin="0,30,0,0"
+                IsVisible="{Binding NewGameVisibility}"
+                Command="{Binding NewGameCommand}" />
+            <Button
+                Content="Easy"
+                Height="38" Width="94"
+                Margin="0,5,0,0"
+                Command="{Binding NewEasyGameCommand}"
+                IsVisible="{Binding GameStartingVisibility}" />
+            <Button
+                Content="Medium"
+                Height="38" Width="94"
+                Margin="0,15,0,0"
+                Command="{Binding NewMediumGameCommand}"
+                IsVisible="{Binding GameStartingVisibility}" />
+            <Button
+                Content="Hard"
+                Height="38" Width="94"
+                Margin="0,15,0,0"
+                Command="{Binding NewHardGameCommand}"
+                IsVisible="{Binding GameStartingVisibility}" />
+        </StackPanel>
+
+    </Grid>
+
+
+</UserControl>

@@ -1,0 +1,25 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Tetris.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:input="using:Avalonia.Input"
+        xmlns:views="clr-namespace:Tetris.Views"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="630"
+        x:Class="Tetris.Views.MainWindow"
+        Icon="/Assets/Icon.png"
+        Width="800" Height="630"
+        MinHeight="600" MinWidth="700"
+        Title="Tetris">
+    <views:MainView />
+
+    <Window.KeyBindings>
+      <KeyBinding Gesture="Down" Command="{Binding KeyInputCommand}" CommandParameter="d" />
+      <KeyBinding Gesture="Up" Command="{Binding KeyInputCommand}" CommandParameter="u" />
+      <KeyBinding Gesture="Left" Command="{Binding KeyInputCommand}" CommandParameter="l" />
+      <KeyBinding Gesture="Right" Command="{Binding KeyInputCommand}" CommandParameter="r" />
+      <KeyBinding Gesture="X" Command="{Binding KeyInputCommand}" CommandParameter="x" />
+      <KeyBinding Gesture="Z" Command="{Binding KeyInputCommand}" CommandParameter="z" />
+    </Window.KeyBindings>
+
+</Window>

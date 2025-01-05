@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tetris", "Tetris\Tetris.csproj", "{9380373E-1B35-4877-9D1A-B6198F462D08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tetris.Android", "Tetris.Android\Tetris.Android.csproj", "{01F5AFCA-DEBD-45F2-9EF3-CA1CE3F86CF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tetris.Desktop", "Tetris.Desktop\Tetris.Desktop.csproj", "{4C5EEBD8-8C62-4442-9C24-8D05DB4807A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tetris.Model", "Tetris.Model\Tetris.Model.csproj", "{D33D4A11-BC13-4C25-8ECF-997265DA4CDB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9380373E-1B35-4877-9D1A-B6198F462D08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9380373E-1B35-4877-9D1A-B6198F462D08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9380373E-1B35-4877-9D1A-B6198F462D08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9380373E-1B35-4877-9D1A-B6198F462D08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01F5AFCA-DEBD-45F2-9EF3-CA1CE3F86CF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01F5AFCA-DEBD-45F2-9EF3-CA1CE3F86CF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01F5AFCA-DEBD-45F2-9EF3-CA1CE3F86CF5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{01F5AFCA-DEBD-45F2-9EF3-CA1CE3F86CF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01F5AFCA-DEBD-45F2-9EF3-CA1CE3F86CF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01F5AFCA-DEBD-45F2-9EF3-CA1CE3F86CF5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{4C5EEBD8-8C62-4442-9C24-8D05DB4807A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C5EEBD8-8C62-4442-9C24-8D05DB4807A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C5EEBD8-8C62-4442-9C24-8D05DB4807A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C5EEBD8-8C62-4442-9C24-8D05DB4807A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D33D4A11-BC13-4C25-8ECF-997265DA4CDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D33D4A11-BC13-4C25-8ECF-997265DA4CDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D33D4A11-BC13-4C25-8ECF-997265DA4CDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D33D4A11-BC13-4C25-8ECF-997265DA4CDB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
